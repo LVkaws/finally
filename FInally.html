@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#c8b7ff">
+<title>Our Magical Realm ✨</title>
+<style>
+:root{
+  --pink:#ffb5d8;--hot:#ff76b5;--lav:#c8b7ff;--blue:#a9ddff;
+  --mint:#baf0da;--white:#fffaff;--gold:#ffd76b;--ink:#654b7f;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 20px 60px rgba(105,73,150,.18)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;min-height:100vh;color:var(--ink);
+  font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif;
+  background:
+    radial-gradient(circle at 12% 8%,#fff 0,transparent 25%),
+    radial-gradient(circle at 90% 15%,#bde8ff99,transparent 27%),
+    linear-gradient(135deg,#ffd8ec,#ded0ff 38%,#bdeaff 70%,#d0f7e3);
+  overflow-x:hidden
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.28;
+  background-image:radial-gradient(#fff 1.5px,transparent 1.5px);
+  background-size:46px 46px
+}
+button,input{font:inherit}
+button{cursor:pointer}
+.sky{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.cloud{
+  position:absolute;width:190px;height:60px;background:#ffffffcc;border-radius:999px;
+  box-shadow:0 12px 25px #8e7bb21c;animation:cloudMove linear infinite
+}
+.cloud:before,.cloud:after{content:"";position:absolute;background:inherit;border-radius:50%}
+.cloud:before{width:82px;height:82px;left:28px;bottom:0}
+.cloud:after{width:95px;height:95px;right:25px;bottom:0}
+.c1{top:12%;left:-240px;animation-duration:52s}
+.c2{top:39%;left:-300px;animation-duration:65s;animation-delay:-18s;transform:scale(.7)}
+.c3{top:72%;left:-260px;animation-duration:58s;animation-delay:-34s;transform:scale(1.15)}
+@keyframes cloudMove{to{transform:translateX(calc(100vw + 600px))}}
+.stars i{
+  position:absolute;width:5px;height:5px;border-radius:50%;background:#fff;
+  box-shadow:0 0 14px #fff;animation:twinkle 2.5s ease-in-out infinite
+}
+@keyframes twinkle{50%{opacity:.2;transform:scale(.45)}}
+
+.wrap{position:relative;z-index:1;width:min(1120px,92%);margin:auto;padding:22px 0 65px}
+nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 16px;border:1px solid #fff;background:#ffffff78;
+  backdrop-filter:blur(15px);border-radius:24px;box-shadow:var(--shadow)
+}
+.logo{font-weight:1000;color:#795aa1}
+.sound{
+  border:1px solid #fff;background:#ffffffb8;color:var(--ink);
+  padding:9px 14px;border-radius:999px;box-shadow:0 7px 18px #74599518
+}
+.hero{
+  min-height:610px;display:grid;grid-template-columns:1.1fr .9fr;
+  align-items:center;gap:25px
+}
+.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:.8rem;font-weight:900;color:#8b6bb3}
+h1{
+  font-size:clamp(3rem,7vw,6rem);line-height:.9;letter-spacing:-4px;margin:12px 0 24px
+}
+.rainbow{
+  color:transparent;background:linear-gradient(90deg,#ff73b4,#a986ff,#6acfff,#65dca6,#ffd05f,#ff73b4);
+  background-size:300% 100%;-webkit-background-clip:text;background-clip:text;
+  animation:rainbow 7s linear infinite
+}
+@keyframes rainbow{to{background-position:300% 0}}
+.hero p{font-size:1.1rem;line-height:1.7;max-width:640px}
+.cta{
+  border:0;color:#fff;font-weight:1000;padding:15px 23px;border-radius:999px;
+  background:linear-gradient(100deg,#ff7eb9,#a788ff,#6bcfff);
+  box-shadow:0 12px 30px #9670c94a;transition:.25s
+}
+.cta:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 17px 40px #9670c966}
+.magic{
+  min-height:410px;display:grid;place-items:center;position:relative;animation:bob 4s ease-in-out infinite
+}
+@keyframes bob{50%{transform:translateY(-12px)}}
+.ring{
+  width:340px;height:340px;border-radius:50%;
+  background:conic-gradient(#ff9dcc,#c2a9ff,#8bdcff,#9ae9c7,#ffe08a,#ff9dcc);
+  box-shadow:0 0 70px #fff;animation:spin 12s linear infinite;display:grid;place-items:center
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.heart{
+  width:145px;height:145px;position:relative;transform:rotate(-45deg);
+  background:linear-gradient(135deg,#ff8fc4,#b18aff);filter:drop-shadow(0 14px 15px #8b68b94c)
+}
+.heart:before,.heart:after{content:"";position:absolute;width:145px;height:145px;background:inherit;border-radius:50%}
+.heart:before{top:-72px;left:0}.heart:after{left:72px;top:0}
+.heart span{position:absolute;z-index:2;transform:rotate(45deg);font-size:60px;left:45px;top:42px;color:#fff}
+.spark{position:absolute;color:#fff;font-size:30px;text-shadow:0 0 16px #fff;animation:pulse 1.6s infinite}
+.s1{top:12%;left:12%}.s2{right:8%;top:27%;animation-delay:.4s}.s3{bottom:15%;left:19%;animation-delay:.8s}.s4{bottom:13%;right:16%;animation-delay:1.1s}
+@keyframes pulse{50%{transform:scale(1.35) rotate(10deg);opacity:.55}}
+
+.section-title{text-align:center;margin:45px 0 23px}
+.section-title h2,.generator h2{font-size:clamp(2rem,5vw,3.2rem);margin:0 0 8px}
+.section-title p,.generator>p{margin:0;opacity:.78}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  position:relative;padding:23px;border-radius:28px;background:var(--glass);
+  border:1px solid #fff;box-shadow:var(--shadow);cursor:pointer;transition:.3s;overflow:hidden
+}
+.card:before{
+  content:"";position:absolute;inset:-2px;border-radius:30px;padding:2px;
+  background:linear-gradient(120deg,#ff9dce,#a98bff,#77d4ff,#83e4bd,#ffd76c,#ff9dce);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;opacity:.55
+}
+.card:hover{transform:translateY(-9px);box-shadow:0 27px 65px #75569b2b}
+.icon{font-size:2.6rem}.card h3{font-size:1.35rem;margin:12px 0 8px}.card p{line-height:1.6;margin:0;opacity:.78}
+.badge{display:inline-block;margin-top:17px;padding:7px 11px;border-radius:999px;background:#fff9;font-size:.78rem;font-weight:900}
+
+.generator{
+  margin:78px 0 30px;padding:35px;text-align:center;border-radius:34px;
+  background:#ffffff9e;border:1px solid #fff;box-shadow:var(--shadow);position:relative;overflow:hidden
+}
+.generator:before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,#ffb7dd33,#c7b5ff33,#a9ddff33,#baf0da33)
+}
+.form{display:flex;max-width:700px;margin:25px auto 8px;gap:10px;position:relative}
+input{
+  flex:1;min-width:0;padding:16px 19px;border:2px solid #a98dbe33;
+  border-radius:999px;outline:0;background:#fff;color:var(--ink)
+}
+input:focus{border-color:#a98cff;box-shadow:0 0 0 5px #a98cff22}
+.result{min-height:115px;display:grid;place-items:center;position:relative}
+.result-inner{animation:pop .45s ease}.pony-name{font-size:2rem;font-weight:1000;color:#7b5ba5}.mark{font-size:3rem}
+@keyframes pop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
+
+.proposal{
+  margin-top:65px;padding:55px 25px;text-align:center;border-radius:38px;
+  background:linear-gradient(145deg,#ffffffc9,#ffe8f4b8,#e8ddffbf);
+  border:2px solid #fff;box-shadow:0 25px 80px #7655a033;position:relative;overflow:hidden
+}
+.proposal h2{font-size:clamp(2.3rem,6vw,4.5rem);margin:0 0 15px}
+.proposal p{font-size:1.1rem;line-height:1.6}
+.proposal-buttons{display:flex;justify-content:center;gap:15px;min-height:65px;margin-top:25px;position:relative}
+.yes{font-size:1.1rem;padding:16px 30px;animation:yesPulse 2s ease-in-out infinite}
+@keyframes yesPulse{50%{box-shadow:0 0 35px #ff77b988}}
+.no{
+  background:#fff;color:#765a91;border:1px solid #d9ccef;
+  padding:14px 25px;border-radius:999px;position:relative;transition:.2s
+}
+.note{font-size:.8rem;opacity:.6;margin-top:17px}
+
+.modal{
+  position:fixed;inset:0;display:none;place-items:center;padding:20px;
+  background:#49366555;backdrop-filter:blur(9px);z-index:50
+}
+.modal.open{display:grid}
+.box{
+  width:min(570px,100%);background:#fffaff;border:3px solid #fff;border-radius:32px;
+  padding:30px;box-shadow:0 30px 90px #40305d66;position:relative;text-align:center;animation:pop .35s ease
+}
+.close{
+  position:absolute;right:13px;top:11px;border:0;background:#eee6ff;color:#70558f;
+  width:39px;height:39px;border-radius:50%;font-size:21px
+}
+.box h3{font-size:2rem;margin:8px 0}.box p{line-height:1.7}
+.quote{margin-top:18px;padding:17px;border-radius:20px;background:#f1ebff;font-style:italic}
+.full-message{font-size:1.05rem;line-height:1.8}
+
+.particle,.confetti{position:fixed;z-index:100;pointer-events:none}
+.particle{font-size:17px;animation:particle .75s ease-out forwards}
+@keyframes particle{to{opacity:0;transform:translate(var(--x),var(--y)) rotate(35deg) scale(.2)}}
+.confetti{font-size:22px;animation:confetti 1.4s ease-out forwards}
+@keyframes confetti{to{opacity:0;transform:translate(var(--x),var(--y)) rotate(720deg) scale(.6)}}
+footer{text-align:center;padding-top:28px;opacity:.6;font-size:.9rem}
+
+@media(max-width:850px){
+  .hero{grid-template-columns:1fr;text-align:center;padding-top:45px}
+  .hero p{margin-left:auto;margin-right:auto}.magic{min-height:320px}
+  .ring{width:270px;height:270px}.heart{width:115px;height:115px}
+  .heart:before,.heart:after{width:115px;height:115px}.heart:before{top:-57px}.heart:after{left:57px}
+  .heart span{font-size:47px;left:36px;top:33px}.cards{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .wrap{width:94%}h1{letter-spacing:-2px}.cards{grid-template-columns:1fr}
+  .generator{padding:28px 17px}.form{flex-direction:column}
+  .form input,.form .cta{width:100%}.proposal{padding:42px 17px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<div class="sky">
+  <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+  <div class="stars">
+    <i style="left:7%;top:12%"></i><i style="left:21%;top:26%;animation-delay:.7s"></i>
+    <i style="left:43%;top:8%;animation-delay:1.2s"></i><i style="left:67%;top:18%;animation-delay:.4s"></i>
+    <i style="left:91%;top:30%;animation-delay:1.7s"></i><i style="left:74%;top:62%;animation-delay:.9s"></i>
+    <i style="left:11%;top:75%;animation-delay:1.4s"></i><i style="left:50%;top:81%;animation-delay:.2s"></i>
+  </div>
+</div>
+
+<div class="wrap">
+  <nav>
+    <div class="logo">🌈 ✨ Our Magical Realm</div>
+    <button class="sound" id="soundBtn">🔇 Sound Off</button>
+  </nav>
+<div id="spotifyMusicWrap" style="display:flex;flex-direction:column;align-items:center;gap:10px;margin:14px auto 0;position:relative;z-index:2;">
+  <button class="sound" id="spotifyMusicBtn" type="button">💗 Play No Other Heart — Mac DeMarco</button>
+  <div id="spotifyMusicPlayer" style="display:none;width:min(620px,100%);">
+    <div id="spotify-embed"></div>
+  </div>
+</div>
+
+        <b class="spark s1">✦</b><b class="spark s2">♡</b><b class="spark s3">✧</b><b class="spark s4">★</b>
+      </div>
+    </section>
+
+    <section id="memories">
+      <div class="section-title">
+        <h2>Little Things I Love About You 💗</h2>
+        <p>Tap a card for a little note.</p>
+      </div>
+      <div class="cards" id="cards"></div>
+    </section>
+
+    <section class="generator" id="generator">
+      <h2>✨ Find Your Pony Name ✨</h2>
+      <p>Your magical name is waiting to be discovered.</p>
+      <form class="form" id="nameForm">
+        <input id="nameInput" maxlength="30" placeholder="Your name..." autocomplete="off" aria-label="Your name">
+        <button class="cta" type="submit">Discover Your Pony Name 🌟</button>
+      </form>
+      <div class="result" id="result" aria-live="polite"></div>
+    </section>
+
+    <section class="proposal" id="proposal">
+      <div style="font-size:3rem">💗 🦄 ✨</div>
+      <h2>Will You Be My Girlfriend?</h2>
+      <p>
+        So after all the magic, sparkles and silly little adventures...
+        there's one question left.
+      </p>
+      <div class="proposal-buttons" id="proposalButtons">
+        <button class="cta yes" id="yesBtn">YES! 💕</button>
+        <button class="no" id="noBtn">No 😭</button>
+      </div>
+      <div class="note">P.S. the No button is feeling a little shy...</div>
+    </section>
+  </main>
+
+  <footer>Made with pastel magic, friendship, and a ridiculous number of sparkles. ✨</footer>
+</div>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="box">
+    <button class="close" id="close" aria-label="Close">×</button>
+    <div id="modalIcon" style="font-size:3rem">💗</div>
+    <h3 id="modalTitle"></h3>
+    <p id="modalText"></p>
+    <div class="quote" id="modalQuote"></div>
+  </div>
+</div>
+
+<script>
+(() => {
+  // Change this one value to her name.
+  const GIRLFRIEND_NAME = "[Girlfriend's Name]";
+
+  // Personal cards: replace the text with your own memories/compliments.
+  const cards = [
+    {icon:"🌸",title:"Your Smile",text:"Honestly, your smile might be my favorite thing about you. With your pretty eyes and that laugh I could listen to forever, you somehow make even the most ordinary day feel a little brighter.",quote:"Some people bring sunshine with them without even trying."},
+    {icon:"🦋",title:"Your Personality",text:"I love how uniquely you are you. You can be playful enough to rock sheep shoes one minute, then somehow be as deep and intense as an Ultraviolence album the next. You have this way of bringing so much color and personality into everything you do.",quote:"Being yourself is its own kind of magic."},
+    {icon:"⭐",title:"Our Memories",text:"I love all the little things you share with me, from the completely random pictures you send to those sweet drawings of us surrounded by flowers and hearts. They might seem like tiny things, but they mean so much to me and somehow make the distance between us feel a lot smaller.",quote:"The best memories rarely announce themselves while they are happening."},
+    {icon:"☁️",title:"Your Kindness",text:"I notice all the little ways you let me into your life—showing me where you go, what you’re doing, and all those random pieces of your day. You probably don’t even think twice about it, but to me it shows how warm, thoughtful, and caring you really are.",quote:"Kindness is a superpower that never goes out of style."},
+    {icon:"🌈",title:"Your Energy",text:"You have this effortless energy that makes everything feel more alive. Your passion, your creativity, and just the way you are make things so much more vivid, even when all I can do is experience it through a screen.",quote:"Some friendships and relationships feel like finding a rainbow after rain."},
+    {icon:"💎",title:"Just You",text:"You never have to change yourself or try to be someone you’re not for me. I love all those little pieces that make you you—your voice, your art, your cozy little vibe, and all the things that make your world yours. Somehow, they’ve all found a permanent place in my heart.",quote:"The rarest magic is simply being unapologetically you."}
+  ];
+
+  const ponyPrefixes=["Radiant","Honey","Starlight","Dreamy","Crystal","Rosy","Moonlit","Rainbow","Sweet","Twinkle","Velvet","Sunny"];
+  const ponySuffixes=["Sparkle","Cloud","Bloom","Star","Whisper","Charm","Shimmer","Breeze","Glow","Melody","Wish","Heart"];
+  const marks=["💗","🌈","🌸","🦋","⭐","☁️","🌙","✨","🎵","🌻","💎","🪄"];
+
+  document.getElementById("heroName").textContent=GIRLFRIEND_NAME;
+
+  const modal=document.getElementById("modal");
+  const soundBtn=document.getElementById("soundBtn");
+  let soundOn=false,audioCtx=null;
+
+  document.getElementById("cards").innerHTML=cards.map((c,i)=>`
+    <article class="card" tabindex="0" data-i="${i}">
+      <div class="icon">${c.icon}</div>
+      <h3>${c.title}</h3><p>${c.text}</p>
+      <span class="badge">Open little note ✦</span>
+    </article>`).join("");
+
+  function openCard(i){
+    const c=cards[i];
+    document.getElementById("modalIcon").textContent=c.icon;
+    document.getElementById("modalTitle").textContent=c.title;
+    document.getElementById("modalText").textContent=c.text;
+    document.getElementById("modalQuote").textContent="💬 “"+c.quote+"”";
+    modal.classList.add("open"); chime();
+  }
+  document.getElementById("cards").addEventListener("click",e=>{
+    const card=e.target.closest(".card");if(card)openCard(+card.dataset.i)
+  });
+  document.getElementById("cards").addEventListener("keydown",e=>{
+    if(e.key==="Enter"||e.key===" "){
+      const card=e.target.closest(".card");if(card){e.preventDefault();openCard(+card.dataset.i)}
+    }
+  });
+  document.getElementById("close").onclick=()=>modal.classList.remove("open");
+  modal.onclick=e=>{if(e.target===modal)modal.classList.remove("open")};
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")modal.classList.remove("open")});
+
+  function chime(){
+    if(!soundOn)return;
+    audioCtx ||= new (window.AudioContext||window.webkitAudioContext)();
+    const t=audioCtx.currentTime;
+    [659,784,988,1175].forEach((f,i)=>{
+      const o=audioCtx.createOscillator(),g=audioCtx.createGain();
+      o.type="sine";o.frequency.value=f;
+      g.gain.setValueAtTime(.0001,t+i*.07);
+      g.gain.exponentialRampToValueAtTime(.07,t+i*.07+.02);
+      g.gain.exponentialRampToValueAtTime(.0001,t+i*.07+.23);
+      o.connect(g).connect(audioCtx.destination);o.start(t+i*.07);o.stop(t+i*.07+.25);
+    });
+  }
+  soundBtn.onclick=()=>{
+    soundOn=!soundOn;soundBtn.textContent=soundOn?"🔊 Sound On":"🔇 Sound Off";
+    if(soundOn)chime();
+  };
+
+  document.getElementById("startBtn").onclick=()=>{
+    document.getElementById("memories").scrollIntoView({behavior:"smooth"});chime()
+  };
+
+  document.getElementById("nameForm").onsubmit=e=>{
+    e.preventDefault();
+    const input=document.getElementById("nameInput"),name=input.value.trim();
+    if(!name){input.focus();return}
+    const seed=[...name].reduce((a,c)=>a+c.charCodeAt(0),0);
+    const pony=ponyPrefixes[seed%ponyPrefixes.length]+" "+ponySuffixes[(seed*7)%ponySuffixes.length];
+    const mark=marks[(seed*13)%marks.length];
+    document.getElementById("result").innerHTML=
+      `<div class="result-inner"><div class="pony-name">${pony}</div><div class="mark">${mark}</div><div>✨ Your cutie-mark magic has been unlocked! ✨</div></div>`;
+    const r=e.submitter.getBoundingClientRect();confetti(r.left+r.width/2,r.top+r.height/2);chime();
+  };
+
+  function confetti(x,y){
+    for(let i=0;i<65;i++){
+      const p=document.createElement("span");p.className="confetti";
+      p.textContent=["💗","✨","♡","★","🌸","💫","🌈"][Math.floor(Math.random()*7)];
+      p.style.left=x+"px";p.style.top=y+"px";
+      p.style.setProperty("--x",(Math.random()*700-350)+"px");
+      p.style.setProperty("--y",(Math.random()*650-300)+"px");
+      document.body.appendChild(p);setTimeout(()=>p.remove(),1500);
+    }
+  }
+
+  // Cursor sparkle trail. Throttled so it stays lightweight.
+  let last=0;
+  document.addEventListener("pointermove",e=>{
+    const now=performance.now();if(now-last<34)return;last=now;
+    const p=document.createElement("span");p.className="particle";
+    p.textContent=Math.random()>.45?"✦":"♡";
+    p.style.left=e.clientX+"px";p.style.top=e.clientY+"px";
+    p.style.setProperty("--x",(Math.random()*38-19)+"px");
+    p.style.setProperty("--y",(Math.random()*38-19)+"px");
+    document.body.appendChild(p);setTimeout(()=>p.remove(),760);
+  });
+
+  // Playful "No" button: it relocates when the pointer gets close.
+  const no=document.getElementById("noBtn"), area=document.getElementById("proposalButtons");
+  let escapes=0;
+  function escapeNo(){
+    escapes++;
+    no.style.position="fixed";
+    const pad=18;
+    const maxX=Math.max(pad,window.innerWidth-no.offsetWidth-pad);
+    const maxY=Math.max(pad,window.innerHeight-no.offsetHeight-pad);
+    no.style.left=(pad+Math.random()*(maxX-pad))+"px";
+    no.style.top=(pad+Math.random()*(maxY-pad))+"px";
+    no.style.transform=`scale(${Math.max(.62,1-escapes*.035)})`;
+    no.textContent=["No 😭","Are you sure? 🥺","Too slow! 💨","Try again! 💗","Hmm... nope! ✨"][Math.min(escapes,4)];
+  }
+  area.addEventListener("pointermove",e=>{
+    const r=no.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2);
+    if(Math.hypot(dx,dy)<115)escapeNo();
+  });
+  no.addEventListener("mouseenter",escapeNo);
+  no.addEventListener("touchstart",e=>{e.preventDefault();escapeNo()},{passive:false});
+
+  document.getElementById("yesBtn").onclick=e=>{
+    confetti(window.innerWidth/2,window.innerHeight/2);chime();
+    document.getElementById("modalIcon").textContent="💖";
+    document.getElementById("modalTitle").textContent="YAY! It's a YES! ✨";
+    document.getElementById("modalText").innerHTML=
+      `<span class="full-message"><strong>I love you bunny</strong><br><br>
+      Val, I swear it’s the little things about you that get me the most. Your sheep shoes, the random pictures you send me, and those drawings of us covered in flowers and hearts somehow make the distance between us feel so much smaller. I could honestly listen to your laugh forever, and your eyes and that smile of yours can make even the most boring day feel special. I miss our random calls and the stupid little conversations we have, and I’m always looking forward to the next time I get to talk to you. Somehow, all these tiny things about you have become some of my favorite things in the world. I love you so much, bunny.</span>`;
+    document.getElementById("modalQuote").textContent="💬 “And so a brand-new chapter begins...”";
+    modal.classList.add("open");
+    no.style.position="relative";no.style.left="";no.style.top="";no.style.transform="";no.textContent="No 😭";
+  };
+})();
+</script>
+</body>
+</html>
